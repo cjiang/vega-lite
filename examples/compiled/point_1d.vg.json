@@ -12,13 +12,7 @@
                 "parse": {
                     "IMDB_Rating": "number"
                 }
-            },
-            "transform": [
-                {
-                    "type": "filter",
-                    "expr": "datum[\"IMDB_Rating\"] !== null && !isNaN(datum[\"IMDB_Rating\"])"
-                }
-            ]
+            }
         }
     ],
     "signals": [

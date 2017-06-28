@@ -23,10 +23,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalLength\"])",
                     "as": "sepalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"]) && datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"])"
                 }
             ]
         },
@@ -43,10 +39,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalWidth\"])",
                     "as": "petalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"]) && datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"])"
                 }
             ]
         },
@@ -63,10 +55,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalWidth\"])",
                     "as": "petalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"]) && datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"])"
                 }
             ]
         },
@@ -78,10 +66,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalWidth\"])",
                     "as": "petalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"])"
                 }
             ]
         },
@@ -98,10 +82,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalLength\"])",
                     "as": "petalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"]) && datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"])"
                 }
             ]
         },
@@ -118,10 +98,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalLength\"])",
                     "as": "petalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"]) && datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"])"
                 }
             ]
         },
@@ -133,10 +109,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalLength\"])",
                     "as": "petalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"])"
                 }
             ]
         },
@@ -153,10 +125,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalWidth\"])",
                     "as": "petalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"]) && datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"])"
                 }
             ]
         },
@@ -173,10 +141,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalWidth\"])",
                     "as": "sepalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"]) && datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"])"
                 }
             ]
         },
@@ -188,10 +152,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalWidth\"])",
                     "as": "sepalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"])"
                 }
             ]
         },
@@ -208,10 +168,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalWidth\"])",
                     "as": "sepalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"]) && datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"])"
                 }
             ]
         },
@@ -228,10 +184,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalWidth\"])",
                     "as": "sepalWidth"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"]) && datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"])"
                 }
             ]
         },
@@ -243,10 +195,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalLength\"])",
                     "as": "sepalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"])"
                 }
             ]
         },
@@ -263,10 +211,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalLength\"])",
                     "as": "sepalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"sepalWidth\"] !== null && !isNaN(datum[\"sepalWidth\"]) && datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"])"
                 }
             ]
         },
@@ -283,10 +227,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"sepalLength\"])",
                     "as": "sepalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"]) && datum[\"sepalLength\"] !== null && !isNaN(datum[\"sepalLength\"])"
                 }
             ]
         },
@@ -303,10 +243,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"petalLength\"])",
                     "as": "petalLength"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"petalWidth\"] !== null && !isNaN(datum[\"petalWidth\"]) && datum[\"petalLength\"] !== null && !isNaN(datum[\"petalLength\"])"
                 }
             ]
         }

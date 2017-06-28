@@ -25,16 +25,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": "data_1",
-            "source": "source_0",
-            "transform": [
-                {
-                    "type": "filter",
-                    "expr": "datum[\"Horsepower\"] !== null && !isNaN(datum[\"Horsepower\"]) && datum[\"Acceleration\"] !== null && !isNaN(datum[\"Acceleration\"])"
-                }
-            ]
         }
     ],
     "signals": [
@@ -276,18 +266,6 @@
                             "ascending"
                         ]
                     },
-                    "data": [
-                        {
-                            "source": "child_facet",
-                            "name": "data_0",
-                            "transform": [
-                                {
-                                    "type": "filter",
-                                    "expr": "datum[\"Horsepower\"] !== null && !isNaN(datum[\"Horsepower\"]) && datum[\"Acceleration\"] !== null && !isNaN(datum[\"Acceleration\"])"
-                                }
-                            ]
-                        }
-                    ],
                     "encode": {
                         "update": {
                             "width": {
@@ -306,7 +284,7 @@
                                 "point"
                             ],
                             "from": {
-                                "data": "data_0"
+                                "data": "child_facet"
                             },
                             "encode": {
                                 "update": {
@@ -372,7 +350,7 @@
             "name": "x",
             "type": "linear",
             "domain": {
-                "data": "data_1",
+                "data": "source_0",
                 "field": "Horsepower"
             },
             "range": [
@@ -389,7 +367,7 @@
             "name": "y",
             "type": "linear",
             "domain": {
-                "data": "data_1",
+                "data": "source_0",
                 "field": "Acceleration"
             },
             "range": [

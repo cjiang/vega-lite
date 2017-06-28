@@ -30,10 +30,6 @@
                     "as": "distance"
                 },
                 {
-                    "type": "filter",
-                    "expr": "datum[\"distance\"] !== null && !isNaN(datum[\"distance\"])"
-                },
-                {
                     "type": "extent",
                     "field": "distance",
                     "signal": "child_distance_bin_maxbins_20_distance_extent"
@@ -79,10 +75,6 @@
                     "as": "delay"
                 },
                 {
-                    "type": "filter",
-                    "expr": "datum[\"delay\"] !== null && !isNaN(datum[\"delay\"])"
-                },
-                {
                     "type": "extent",
                     "field": "delay",
                     "signal": "child_delay_bin_maxbins_20_delay_extent"
@@ -126,10 +118,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"time\"])",
                     "as": "time"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"time\"] !== null && !isNaN(datum[\"time\"])"
                 },
                 {
                     "type": "extent",

@@ -29,10 +29,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"Horsepower\"])",
                     "as": "Horsepower"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"Miles_per_Gallon\"] !== null && !isNaN(datum[\"Miles_per_Gallon\"]) && datum[\"Horsepower\"] !== null && !isNaN(datum[\"Horsepower\"])"
                 }
             ]
         },
@@ -49,10 +45,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"Acceleration\"])",
                     "as": "Acceleration"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"Displacement\"] !== null && !isNaN(datum[\"Displacement\"]) && datum[\"Acceleration\"] !== null && !isNaN(datum[\"Acceleration\"])"
                 }
             ]
         }

@@ -15,13 +15,7 @@
                     "Miles_per_Gallon": "number",
                     "Acceleration": "number"
                 }
-            },
-            "transform": [
-                {
-                    "type": "filter",
-                    "expr": "datum[\"Horsepower\"] !== null && !isNaN(datum[\"Horsepower\"]) && datum[\"Miles_per_Gallon\"] !== null && !isNaN(datum[\"Miles_per_Gallon\"]) && datum[\"Acceleration\"] !== null && !isNaN(datum[\"Acceleration\"])"
-                }
-            ]
+            }
         }
     ],
     "signals": [

@@ -42,10 +42,6 @@
                     }
                 },
                 {
-                    "type": "filter",
-                    "expr": "datum[\"Acceleration\"] !== null && !isNaN(datum[\"Acceleration\"])"
-                },
-                {
                     "type": "aggregate",
                     "groupby": [
                         "bin_maxbins_10_Acceleration",
@@ -93,10 +89,6 @@
                 {
                     "type": "filter",
                     "expr": "!(length(data(\"brush_store\"))) || (vlInterval(\"brush_store\", datum))"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"Acceleration\"] !== null && !isNaN(datum[\"Acceleration\"])"
                 },
                 {
                     "type": "aggregate",

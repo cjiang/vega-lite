@@ -58,10 +58,6 @@
                 {
                     "type": "filter",
                     "expr": "datum.b2 > 60"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"b2\"] !== null && !isNaN(datum[\"b2\"])"
                 }
             ]
         }

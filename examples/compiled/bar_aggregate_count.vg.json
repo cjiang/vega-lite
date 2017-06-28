@@ -15,10 +15,6 @@
             },
             "transform": [
                 {
-                    "type": "filter",
-                    "expr": "datum[\"precipitation\"] !== null && !isNaN(datum[\"precipitation\"])"
-                },
-                {
                     "type": "extent",
                     "field": "precipitation",
                     "signal": "bin_maxbins_10_precipitation_extent"

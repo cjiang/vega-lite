@@ -18,10 +18,6 @@
                 {
                     "type": "filter",
                     "expr": "datum.symbol==='GOOG'"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"]) && datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
                 }
             ]
         }

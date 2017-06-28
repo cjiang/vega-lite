@@ -203,10 +203,6 @@
                     "as": "population"
                 },
                 {
-                    "type": "filter",
-                    "expr": "datum[\"year\"] !== null && !isNaN(datum[\"year\"]) && datum[\"population\"] !== null && !isNaN(datum[\"population\"])"
-                },
-                {
                     "type": "formula",
                     "as": "year_year",
                     "expr": "datetime(year(datum[\"year\"]), 0, 1, 0, 0, 0, 0)"
@@ -228,10 +224,6 @@
                     "as": "population"
                 },
                 {
-                    "type": "filter",
-                    "expr": "datum[\"year\"] !== null && !isNaN(datum[\"year\"]) && datum[\"population\"] !== null && !isNaN(datum[\"population\"])"
-                },
-                {
                     "type": "formula",
                     "as": "year_year",
                     "expr": "datetime(year(datum[\"year\"]), 0, 1, 0, 0, 0, 0)"
@@ -251,10 +243,6 @@
                     "type": "formula",
                     "expr": "timeParse(datum[\"end\"],'%Y')",
                     "as": "end"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"start\"] !== null && !isNaN(datum[\"start\"])"
                 },
                 {
                     "type": "formula",

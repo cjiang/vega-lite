@@ -54,10 +54,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"lowerBox\"])",
                     "as": "lowerBox"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"lowerWhisker\"] !== null && !isNaN(datum[\"lowerWhisker\"])"
                 }
             ]
         },
@@ -74,10 +70,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"upperWhisker\"])",
                     "as": "upperWhisker"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"upperBox\"] !== null && !isNaN(datum[\"upperBox\"])"
                 }
             ]
         },
@@ -94,10 +86,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"upperBox\"])",
                     "as": "upperBox"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"lowerBox\"] !== null && !isNaN(datum[\"lowerBox\"])"
                 }
             ]
         },
@@ -109,10 +97,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"midBox\"])",
                     "as": "midBox"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"midBox\"] !== null && !isNaN(datum[\"midBox\"])"
                 }
             ]
         }

@@ -12,13 +12,7 @@
                 "parse": {
                     "precipitation": "number"
                 }
-            },
-            "transform": [
-                {
-                    "type": "filter",
-                    "expr": "datum[\"precipitation\"] !== null && !isNaN(datum[\"precipitation\"])"
-                }
-            ]
+            }
         }
     ],
     "signals": [

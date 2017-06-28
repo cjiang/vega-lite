@@ -27,10 +27,6 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"price\"])",
                     "as": "price"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"]) && datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
                 }
             ]
         },
@@ -46,10 +42,6 @@
                 {
                     "type": "filter",
                     "expr": "(index.date) && (!(length(data(\"index_store\"))) || (vlSingle(\"index_store\", datum)))"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"])"
                 }
             ]
         },
@@ -65,10 +57,6 @@
                 {
                     "type": "filter",
                     "expr": "(index.date) && (!(length(data(\"index_store\"))) || (vlSingle(\"index_store\", datum)))"
-                },
-                {
-                    "type": "filter",
-                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"])"
                 }
             ]
         }
