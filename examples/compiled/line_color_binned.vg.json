@@ -56,6 +56,10 @@
                     "as": [
                         "mean_Horsepower"
                     ]
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"Year\"] !== null && !isNaN(datum[\"Year\"])"
                 }
             ]
         }

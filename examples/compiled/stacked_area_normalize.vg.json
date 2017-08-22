@@ -65,6 +65,10 @@
                         "sum_count_end"
                     ],
                     "offset": "normalize"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"yearmonth_date\"] !== null && !isNaN(datum[\"yearmonth_date\"])"
                 }
             ]
         }

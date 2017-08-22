@@ -18,7 +18,21 @@
                     "income": "number",
                     "population": "number"
                 }
-            }
+            },
+            "transform": [
+                {
+                    "type": "filter",
+                    "expr": "datum[\"health\"] !== null && !isNaN(datum[\"health\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"income\"] !== null && !isNaN(datum[\"income\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"population\"] !== null && !isNaN(datum[\"population\"])"
+                }
+            ]
         }
     ],
     "signals": [

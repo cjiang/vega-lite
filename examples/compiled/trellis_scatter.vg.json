@@ -12,7 +12,17 @@
                     "Worldwide_Gross": "number",
                     "US_DVD_Sales": "number"
                 }
-            }
+            },
+            "transform": [
+                {
+                    "type": "filter",
+                    "expr": "datum[\"Worldwide_Gross\"] !== null && !isNaN(datum[\"Worldwide_Gross\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"US_DVD_Sales\"] !== null && !isNaN(datum[\"US_DVD_Sales\"])"
+                }
+            ]
         },
         {
             "name": "column_domain",

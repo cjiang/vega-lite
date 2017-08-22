@@ -3,7 +3,6 @@
 import {assert} from 'chai';
 
 import {FilterInvalidNode} from '../../../src/compile/data/filterinvalid';
-import {ScaleType} from '../../../src/scale';
 import {parseUnitModelWithScale} from '../../util';
 
 describe('compile/data/FilterInvalid', function () {
@@ -19,9 +18,18 @@ describe('compile/data/FilterInvalid', function () {
 
     const filter = FilterInvalidNode.make(model);
 
-    assert.deepEqual(filter.filter, {
-      filterNull: ScaleType.TIME,
-      nonPositiveFilter: ScaleType.LOG
-    });
+    assert.deepEqual(
+      filter.assemble(),
+      [
+        {
+          "expr": "datum[\"filterNull\"] !== null && !isNaN(datum[\"filterNull\"])",
+          "type": "filter"
+        },
+        {
+          "expr": "datum[\"nonPositiveFilter\"] !== null && !isNaN(datum[\"nonPositiveFilter\"])",
+          "type": "filter"
+        }
+      ]
+    );
   });
 });

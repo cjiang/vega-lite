@@ -35,6 +35,10 @@
                     "as": [
                         "sum_Weight_in_lbs"
                     ]
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"year_Year\"] !== null && !isNaN(datum[\"year_Year\"])"
                 }
             ]
         }

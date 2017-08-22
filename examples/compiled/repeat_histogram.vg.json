@@ -74,6 +74,10 @@
                         "count_*_end"
                     ],
                     "offset": "zero"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"bin_maxbins_10_Horsepower\"] !== null && !isNaN(datum[\"bin_maxbins_10_Horsepower\"])"
                 }
             ]
         },
@@ -141,6 +145,10 @@
                         "count_*_end"
                     ],
                     "offset": "zero"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"bin_maxbins_10_Miles_per_Gallon\"] !== null && !isNaN(datum[\"bin_maxbins_10_Miles_per_Gallon\"])"
                 }
             ]
         },
@@ -208,6 +216,10 @@
                         "count_*_end"
                     ],
                     "offset": "zero"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"bin_maxbins_10_Acceleration\"] !== null && !isNaN(datum[\"bin_maxbins_10_Acceleration\"])"
                 }
             ]
         }

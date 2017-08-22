@@ -12,7 +12,17 @@
                     "Horsepower": "number",
                     "Miles_per_Gallon": "number"
                 }
-            }
+            },
+            "transform": [
+                {
+                    "type": "filter",
+                    "expr": "datum[\"Horsepower\"] !== null && !isNaN(datum[\"Horsepower\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"Miles_per_Gallon\"] !== null && !isNaN(datum[\"Miles_per_Gallon\"])"
+                }
+            ]
         },
         {
             "name": "column_domain",

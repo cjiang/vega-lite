@@ -34,6 +34,10 @@
                     "as": [
                         "sum_count"
                     ]
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"yearmonth_date\"] !== null && !isNaN(datum[\"yearmonth_date\"])"
                 }
             ]
         }

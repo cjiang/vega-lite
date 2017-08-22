@@ -26,6 +26,14 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"price\"])",
                     "as": "price"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
                 }
             ]
         },
@@ -42,6 +50,14 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"price\"])",
                     "as": "price"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
                 }
             ]
         }

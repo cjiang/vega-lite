@@ -62,6 +62,10 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"c\"])",
                     "as": "c"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"c\"] !== null && !isNaN(datum[\"c\"])"
                 }
             ]
         },
@@ -73,6 +77,10 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"c\"])",
                     "as": "c"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"c\"] !== null && !isNaN(datum[\"c\"])"
                 }
             ]
         }

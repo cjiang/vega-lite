@@ -271,6 +271,14 @@
                     "type": "formula",
                     "as": "yearmonthdate_date",
                     "expr": "datetime(year(datum[\"date\"]), month(datum[\"date\"]), date(datum[\"date\"]), 0, 0, 0, 0)"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"yearmonthdate_date\"] !== null && !isNaN(datum[\"yearmonthdate_date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"low\"] !== null && !isNaN(datum[\"low\"])"
                 }
             ]
         },
@@ -297,6 +305,14 @@
                     "type": "formula",
                     "as": "yearmonthdate_date",
                     "expr": "datetime(year(datum[\"date\"]), month(datum[\"date\"]), date(datum[\"date\"]), 0, 0, 0, 0)"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"yearmonthdate_date\"] !== null && !isNaN(datum[\"yearmonthdate_date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"open\"] !== null && !isNaN(datum[\"open\"])"
                 }
             ]
         }

@@ -14,7 +14,17 @@
                     "date": "date",
                     "price": "number"
                 }
-            }
+            },
+            "transform": [
+                {
+                    "type": "filter",
+                    "expr": "datum[\"date\"] !== null && !isNaN(datum[\"date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
+                }
+            ]
         }
     ],
     "signals": [

@@ -13,7 +13,13 @@
                 "parse": {
                     "Horsepower": "number"
                 }
-            }
+            },
+            "transform": [
+                {
+                    "type": "filter",
+                    "expr": "datum[\"Horsepower\"] !== null && !isNaN(datum[\"Horsepower\"])"
+                }
+            ]
         }
     ],
     "signals": [

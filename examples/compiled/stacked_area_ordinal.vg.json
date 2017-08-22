@@ -65,6 +65,10 @@
                         "sum_Weight_in_lbs_end"
                     ],
                     "offset": "zero"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"year_Year\"] !== null && !isNaN(datum[\"year_Year\"])"
                 }
             ]
         }

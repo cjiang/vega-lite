@@ -84,6 +84,10 @@
                         "sum_Horsepower_end"
                     ],
                     "offset": "zero"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"bin_maxbins_10_Acceleration\"] !== null && !isNaN(datum[\"bin_maxbins_10_Acceleration\"])"
                 }
             ]
         }

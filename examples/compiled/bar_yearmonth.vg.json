@@ -35,6 +35,10 @@
                     "as": [
                         "mean_temp"
                     ]
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"yearmonth_date\"] !== null && !isNaN(datum[\"yearmonth_date\"])"
                 }
             ]
         }

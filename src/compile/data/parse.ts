@@ -13,7 +13,7 @@ import {CalculateNode} from './calculate';
 import {DataFlowNode, OutputNode} from './dataflow';
 import {FacetNode} from './facet';
 import {FilterNode} from './filter';
-import {FilterInvalidNode} from './FilterInvalid';
+import {FilterInvalidNode} from './filterinvalid';
 import {ParseNode} from './formatparse';
 import {IdentifierNode} from './indentifier';
 import {DataComponent} from './index';
@@ -241,11 +241,11 @@ export function parseData(model: Model): DataComponent {
       head = tu;
     }
 
-    const filter = FilterInvalidNode.make(model);
-    if (filter) {
-      filter.parent = head;
-      head = filter;
-    }
+    // const filter = FilterInvalidNode.make(model);
+    // if (filter) {
+    //   filter.parent = head;
+    //   head = filter;
+    // }
   }
 
   // add an output node pre aggregation
@@ -272,6 +272,14 @@ export function parseData(model: Model): DataComponent {
     if (stack) {
       stack.parent = head;
       head = stack;
+    }
+  }
+
+  if (isUnitModel(model) || isFacetModel(model)) {
+    const filter = FilterInvalidNode.make(model);
+    if (filter) {
+      filter.parent = head;
+      head = filter;
     }
   }
 

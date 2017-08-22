@@ -49,6 +49,14 @@
                     "type": "formula",
                     "as": "seconds_date",
                     "expr": "datetime(0, 0, 1, 0, 0, seconds(datum[\"date\"]), 0)"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"seconds_date\"] !== null && !isNaN(datum[\"seconds_date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
                 }
             ]
         },
@@ -79,6 +87,14 @@
                     "type": "formula",
                     "as": "minutes_date",
                     "expr": "datetime(0, 0, 1, 0, minutes(datum[\"date\"]), 0, 0)"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"minutes_date\"] !== null && !isNaN(datum[\"minutes_date\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"price\"] !== null && !isNaN(datum[\"price\"])"
                 }
             ]
         }

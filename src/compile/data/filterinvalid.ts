@@ -1,53 +1,48 @@
 import {isScaleChannel} from '../../channel';
-import {FieldDef} from '../../fielddef';
+import {field as fieldRef, FieldDef} from '../../fielddef';
 import {hasContinuousDomain, ScaleType} from '../../scale';
-import {Dict, extend, keys, stringValue} from '../../util';
+import {Dict, extend, keys} from '../../util';
 import {VgTransform} from '../../vega.schema';
 import {ModelWithField} from '../model';
 import {DataFlowNode} from './dataflow';
 
 export class FilterInvalidNode extends DataFlowNode {
-  private filterInvalid: Dict<ScaleType>;
   private fieldDefs: Dict<FieldDef<string>>;
 
   public clone() {
-    return new FilterInvalidNode(extend({}, this.filterInvalid), extend({}, this.fieldDefs));
+    return new FilterInvalidNode(extend({}, this.fieldDefs));
   }
 
-  constructor(filter: Dict<ScaleType>, fieldDefs: Dict<FieldDef<string>>) {
+  constructor(fieldDefs: Dict<FieldDef<string>>) {
    super();
 
-   this.filterInvalid = filter;
    this.fieldDefs = fieldDefs;
   }
 
-  public static make(model: ModelWithField) {
+  public static make(model: ModelWithField): FilterInvalidNode {
 
-    const fieldDefs = {};
-
-    const filter = model.reduceFieldDef((aggregator: Dict<ScaleType>, fieldDef, channel) => {
+    const filter = model.reduceFieldDef((aggregator: Dict<FieldDef<string>>, fieldDef, channel) => {
       const scaleComponent = isScaleChannel(channel) && model.getScaleComponent(channel);
       if (scaleComponent) {
         const scaleType = scaleComponent.get('type');
 
         // only automatically filter null for continuous domain since discrete domain scales can handle invalid values.
         if (hasContinuousDomain(scaleType) && !fieldDef.aggregate) {
-          aggregator[fieldDef.field] = scaleType;
-          fieldDefs[fieldDef.field] = fieldDef;
+          aggregator[fieldDef.field] = fieldDef;
         }
       }
       return aggregator;
-    }, {} as Dict<ScaleType>);
+    }, {} as Dict<FieldDef<string>>);
 
     if (!keys(filter).length) {
       return null;
     }
 
-  return new FilterInvalidNode(filter, fieldDefs);
+  return new FilterInvalidNode(filter);
   }
 
   get filter() {
-    return this.filterInvalid;
+    return this.fieldDefs;
   }
 
   // create the VgTransforms for each of the filtered fields
@@ -55,14 +50,12 @@ export class FilterInvalidNode extends DataFlowNode {
 
      return keys(this.filter).reduce((vegaFilters, field) => {
       const fieldDef = this.fieldDefs[field];
-      const scaleCompType = this.filter[field];
       const filters = [];
+      const ref = fieldRef(fieldDef, {expr: 'datum'});
 
-      if (scaleCompType === ScaleType.LOG || scaleCompType === ScaleType.SQRT) {
-        filters.push(`datum[${stringValue(field)}] > 0`);
-      } else if (fieldDef !== null) {
-        filters.push(`datum[${stringValue(field)}] !== null`);
-        filters.push(`!isNaN(datum[${stringValue(field)}])`);
+      if (fieldDef !== null) {
+        filters.push(`${ref} !== null`);
+        filters.push(`!isNaN(${ref})`);
       }
 
       vegaFilters.push(filters.length > 0 ? {

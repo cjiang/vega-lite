@@ -52,6 +52,14 @@
                     "type": "formula",
                     "expr": "toNumber(datum[\"y\"])",
                     "as": "y"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"x\"] !== null && !isNaN(datum[\"x\"])"
+                },
+                {
+                    "type": "filter",
+                    "expr": "datum[\"y\"] !== null && !isNaN(datum[\"y\"])"
                 }
             ]
         }
