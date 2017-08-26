@@ -305,7 +305,6 @@ export interface ScaleConfig {
 }
 
 export const defaultScaleConfig = {
-  round: true,
   textXRangeStep: 90,
   rangeStep: 21,
   pointPadding: 0.5,
@@ -443,7 +442,7 @@ export interface Scale {
   /**
    * If `true`, rounds numeric output values to integers. This can be helpful for snapping to the pixel grid.
    *
-   * __Default value:__ `true` for x and y channels if the scale config's `round` is `true`; `false` otherwise.
+   * __Default value:__ `false`.
    */
   round?: boolean;
 
